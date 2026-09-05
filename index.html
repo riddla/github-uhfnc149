@@ -18,38 +18,46 @@ LICENSE file in the root directory of this source tree.
     <script type="module" src="index.js"></script>
   </head>
   <body>
-    <cds-table>
-      <cds-table-toolbar size="lg">
+    <cds-table size="sm">
+      <cds-table-toolbar size="lg" slot="toolbar">
         <cds-tile size="lg">
-        <cds-table-toolbar-content>
-          <cds-grid narrow full-width>
-            <cds-column sm="4" md="8" lg="6" xlg="11" class="filters-column"
-            >
-          <cds-multi-select
-            direction="bottom"
-            locale="en"
-            size="md"
-          >
-            <cds-multi-select-item value="example"
-              >An example option that is really long to show what should be done
-              to handle long text</cds-multi-select-item
-            >
-            <cds-multi-select-item value="all">Option 1</cds-multi-select-item>
-            <cds-multi-select-item value="cloudFoundry"
-              >Option 2</cds-multi-select-item
-            >
-            <cds-multi-select-item disabled="" value="staging"
-              >Option 3 - a disabled item</cds-multi-select-item
-            >
-            <cds-multi-select-item value="dea">Option 4</cds-multi-select-item>
-            <cds-multi-select-item value="router"
-              >Option 5</cds-multi-select-item
-            >
-          </cds-multi-select>
-        </cds-column>
-        </cds-grid>
-        </cds-table-toolbar-content>
-      </cds-tile>
+          <cds-table-toolbar-content>
+            <cds-grid narrow full-width>
+              <cds-column
+                xs="8"
+                sm="4"
+                md="8"
+                lg="6"
+                xlg="11"
+                class="filters-column"
+              >
+                <div class="filters-wrapper">
+                  <cds-multi-select direction="bottom" locale="en" size="md">
+                    <cds-multi-select-item value="example" selected
+                      >An example option that is really long to show what should
+                      be done to handle long text</cds-multi-select-item
+                    >
+                    <cds-multi-select-item value="all"
+                      >Option 1</cds-multi-select-item
+                    >
+                    <cds-multi-select-item value="cloudFoundry"
+                      >Option 2</cds-multi-select-item
+                    >
+                    <cds-multi-select-item disabled="" value="staging"
+                      >Option 3 - a disabled item</cds-multi-select-item
+                    >
+                    <cds-multi-select-item value="dea"
+                      >Option 4</cds-multi-select-item
+                    >
+                    <cds-multi-select-item value="router"
+                      >Option 5</cds-multi-select-item
+                    >
+                  </cds-multi-select>
+                </div>
+              </cds-column>
+            </cds-grid>
+          </cds-table-toolbar-content>
+        </cds-tile>
       </cds-table-toolbar>
       <cds-table-head>
         <cds-table-header-row selection-name="header">
@@ -69,119 +77,10 @@ LICENSE file in the root directory of this source tree.
           <cds-table-cell>3000</cds-table-cell>
           <cds-table-cell>Round robin</cds-table-cell>
           <cds-table-cell>Kevin's VM Groups</cds-table-cell>
-          <cds-table-cell><cds-link disabled="">Disabled</cds-link></cds-table-cell>
-          <cds-table-cell>
-            <cds-overflow-menu toolbar-action="">
-              <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" slot="icon" class="cds--overflow-menu__icon" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="8" r="2"></circle><circle cx="16" cy="16" r="2"></circle><circle cx="16" cy="24" r="2"></circle></svg>
-              <span slot="tooltip-content"> Options </span>
-    
-              <cds-overflow-menu-body flipped="">
-                <cds-overflow-menu-item> Stop app </cds-overflow-menu-item>
-                <cds-overflow-menu-item> Restart app </cds-overflow-menu-item>
-                <cds-overflow-menu-item> Rename </cds-overflow-menu-item>
-              </cds-overflow-menu-body>
-            </cds-overflow-menu>
-          </cds-table-cell>
-        </cds-table-row>
-        <cds-table-row selection-name="1">
-          <cds-table-cell>Load Balancer 1</cds-table-cell>
-          <cds-table-cell>HTTP</cds-table-cell>
-          <cds-table-cell>443</cds-table-cell>
-          <cds-table-cell>Round robin</cds-table-cell>
-          <cds-table-cell>Maureen's VM Groups</cds-table-cell>
-          <cds-table-cell><cds-link>Starting</cds-link></cds-table-cell>
-          <cds-table-cell>
-            <cds-overflow-menu toolbar-action="">
-              <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" slot="icon" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="8" r="2"></circle><circle cx="16" cy="16" r="2"></circle><circle cx="16" cy="24" r="2"></circle></svg>
-              <span slot="tooltip-content"> Options </span>
-    
-              <cds-overflow-menu-body flipped="">
-                <cds-overflow-menu-item> Stop app </cds-overflow-menu-item>
-                <cds-overflow-menu-item> Restart app </cds-overflow-menu-item>
-                <cds-overflow-menu-item> Rename </cds-overflow-menu-item>
-              </cds-overflow-menu-body>
-            </cds-overflow-menu>
-          </cds-table-cell>
-        </cds-table-row>
-        <cds-table-row selection-name="2">
-          <cds-table-cell>Load Balancer 2</cds-table-cell>
-          <cds-table-cell>HTTP</cds-table-cell>
-          <cds-table-cell>80</cds-table-cell>
-          <cds-table-cell>DNS delegation</cds-table-cell>
-          <cds-table-cell>Andrew's VM Groups</cds-table-cell>
-          <cds-table-cell><cds-link>Active</cds-link></cds-table-cell>
-          <cds-table-cell>
-            <cds-overflow-menu toolbar-action="">
-              <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" slot="icon" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="8" r="2"></circle><circle cx="16" cy="16" r="2"></circle><circle cx="16" cy="24" r="2"></circle></svg>
-              <span slot="tooltip-content"> Options </span>
-    
-              <cds-overflow-menu-body flipped="">
-                <cds-overflow-menu-item> Stop app </cds-overflow-menu-item>
-                <cds-overflow-menu-item> Restart app </cds-overflow-menu-item>
-                <cds-overflow-menu-item> Rename </cds-overflow-menu-item>
-              </cds-overflow-menu-body>
-            </cds-overflow-menu>
-          </cds-table-cell>
-        </cds-table-row>
-        <cds-table-row selection-name="3">
-          <cds-table-cell>Load Balancer 6</cds-table-cell>
-          <cds-table-cell>HTTP</cds-table-cell>
-          <cds-table-cell>3000</cds-table-cell>
-          <cds-table-cell>Round robin</cds-table-cell>
-          <cds-table-cell>Marc's VM Groups</cds-table-cell>
-          <cds-table-cell><cds-link disabled="">Disabled</cds-link></cds-table-cell>
-          <cds-table-cell>
-            <cds-overflow-menu toolbar-action="">
-              <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" slot="icon" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="8" r="2"></circle><circle cx="16" cy="16" r="2"></circle><circle cx="16" cy="24" r="2"></circle></svg>
-              <span slot="tooltip-content"> Options </span>
-    
-              <cds-overflow-menu-body flipped="">
-                <cds-overflow-menu-item> Stop app </cds-overflow-menu-item>
-                <cds-overflow-menu-item> Restart app </cds-overflow-menu-item>
-                <cds-overflow-menu-item> Rename </cds-overflow-menu-item>
-              </cds-overflow-menu-body>
-            </cds-overflow-menu>
-          </cds-table-cell>
-        </cds-table-row>
-        <cds-table-row selection-name="4">
-          <cds-table-cell>Load Balancer 4</cds-table-cell>
-          <cds-table-cell>HTTP</cds-table-cell>
-          <cds-table-cell>443</cds-table-cell>
-          <cds-table-cell>Round robin</cds-table-cell>
-          <cds-table-cell>Mel's VM Groups</cds-table-cell>
-          <cds-table-cell><cds-link>Starting</cds-link></cds-table-cell>
-          <cds-table-cell>
-            <cds-overflow-menu toolbar-action="">
-              <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" slot="icon" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="8" r="2"></circle><circle cx="16" cy="16" r="2"></circle><circle cx="16" cy="24" r="2"></circle></svg>
-              <span slot="tooltip-content"> Options </span>
-    
-              <cds-overflow-menu-body flipped="">
-                <cds-overflow-menu-item> Stop app </cds-overflow-menu-item>
-                <cds-overflow-menu-item> Restart app </cds-overflow-menu-item>
-                <cds-overflow-menu-item> Rename </cds-overflow-menu-item>
-              </cds-overflow-menu-body>
-            </cds-overflow-menu>
-          </cds-table-cell>
-        </cds-table-row>
-        <cds-table-row selection-name="5">
-          <cds-table-cell>Load Balancer 5</cds-table-cell>
-          <cds-table-cell>HTTP</cds-table-cell>
-          <cds-table-cell>80</cds-table-cell>
-          <cds-table-cell>DNS delegation</cds-table-cell>
-          <cds-table-cell>Ronja's VM Groups</cds-table-cell>
-          <cds-table-cell><cds-link>Active</cds-link></cds-table-cell>
-          <cds-table-cell>
-            <cds-overflow-menu toolbar-action="">
-              <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" slot="icon" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="8" r="2"></circle><circle cx="16" cy="16" r="2"></circle><circle cx="16" cy="24" r="2"></circle></svg>
-              <span slot="tooltip-content"> Options </span>
-    
-              <cds-overflow-menu-body flipped="">
-                <cds-overflow-menu-item> Stop app </cds-overflow-menu-item>
-                <cds-overflow-menu-item> Restart app </cds-overflow-menu-item>
-                <cds-overflow-menu-item> Rename </cds-overflow-menu-item>
-              </cds-overflow-menu-body>
-            </cds-overflow-menu>
-          </cds-table-cell>
+          <cds-table-cell
+            ><cds-link disabled="">Disabled</cds-link></cds-table-cell
+          >
+          <cds-table-cell> </cds-table-cell>
         </cds-table-row>
       </cds-table-body>
     </cds-table>

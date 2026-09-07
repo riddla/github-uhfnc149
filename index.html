@@ -1,10 +1,3 @@
-<!--
-Copyright IBM Corp. 2020
-
-This source code is licensed under the Apache-2.0 license found in the
-LICENSE file in the root directory of this source tree.
--->
-
 <html>
   <head>
     <title>carbon-web-components example</title>
@@ -32,25 +25,12 @@ LICENSE file in the root directory of this source tree.
                 class="filters-column"
               >
                 <div class="filters-wrapper">
-                  <cds-multi-select direction="bottom" locale="en" size="md">
+                  <cds-multi-select  size="md">
                     <cds-multi-select-item value="example" selected 
-                      >An example option that is really long to show what should
-                      be done to handle long text</cds-multi-select-item
+                      >An example preselected option</cds-multi-select-item
                     >
                     <cds-multi-select-item value="all"
                       >Option 1</cds-multi-select-item
-                    >
-                    <cds-multi-select-item value="cloudFoundry"
-                      >Option 2</cds-multi-select-item
-                    >
-                    <cds-multi-select-item disabled="" value="staging"
-                      >Option 3 - a disabled item</cds-multi-select-item
-                    >
-                    <cds-multi-select-item value="dea"
-                      >Option 4</cds-multi-select-item
-                    >
-                    <cds-multi-select-item value="router"
-                      >Option 5</cds-multi-select-item
                     >
                   </cds-multi-select>
                 </div>
@@ -67,7 +47,6 @@ LICENSE file in the root directory of this source tree.
           <cds-table-header-cell>Rule</cds-table-header-cell>
           <cds-table-header-cell>Attached groups</cds-table-header-cell>
           <cds-table-header-cell>Status</cds-table-header-cell>
-          <cds-table-header-cell></cds-table-header-cell>
         </cds-table-header-row>
       </cds-table-head>
       <cds-table-body>
@@ -80,7 +59,6 @@ LICENSE file in the root directory of this source tree.
           <cds-table-cell
             ><cds-link disabled="">Disabled</cds-link></cds-table-cell
           >
-          <cds-table-cell> </cds-table-cell>
         </cds-table-row>
       </cds-table-body>
     </cds-table>
